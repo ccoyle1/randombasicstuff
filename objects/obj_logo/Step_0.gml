@@ -1,30 +1,36 @@
-/// @description Insert description here
-// You can write your code in this editor
+// AI Movement Logic
 
+// Just Run
+if justrun=true {
+    move_towards_point(obj_smiley.x,obj_smiley.y,5);
+} else {
 
-/// @description Insert description here
-// You can write your code in this editor
-
-instance_create_layer(x, y, "Instances", obj_notfire)
-
-if keyboard_check(vk_right) 
-{
-	motion_add(image_angle, 0.2);
+// Initial Proximity Trigger for Chase
+if distance_to_object(obj_smiley) < 200 {
+    chase=true;
 }
 
-if keyboard_check(vk_left) 
-{
-	motion_add(image_angle, -0.2);
+// New Proximity Trigger for Chase (Only one for life of instance)
+if chase=true && runaway=false && distance_to_object(obj_smiley) < 400{
+    move_towards_point(obj_smiley.x,obj_smiley.y,5);
 }
 
-if keyboard_check(vk_up) 
-{
-	image_angle = y + 1;
+// If obj_smiley is more than 400 pixels away, stop Chase
+if chase=true && runaway=false && distance_to_object(obj_smiley) > 400 {
+    move_towards_point(obj_smiley.x,obj_smiley.y,0);
 }
 
-if keyboard_check(vk_down) 
-{
-	image_angle = y - 1;
+// Flee in random direction away from obj_smiley after Collision Event with obj_smiley
+if chase=false && runaway=true {
+    move_towards_point(obj_smiley.x,obj_smiley.y,5);
+    playerdirection = point_direction(x,y,obj_smiley.x,obj_smiley.y);
+    direction = (playerdirection + (180 + random(40)) );
+}
 }
 
-move_wrap(true, true, 5)
+// Stop and Start Animation
+if speed = 0 {
+    image_speed = 0;
+} else {
+    image_speed = 2;
+}
