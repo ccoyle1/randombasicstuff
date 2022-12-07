@@ -4,7 +4,9 @@
   "name": "hmm",
   "resources": [
     {"id":{"name":"obj_smiley","path":"objects/obj_smiley/obj_smiley.yy",},"order":0,},
+    {"id":{"name":"obj_notfire","path":"objects/obj_notfire/obj_notfire.yy",},"order":2,},
     {"id":{"name":"obj_logo","path":"objects/obj_logo/obj_logo.yy",},"order":1,},
+    {"id":{"name":"NotFire","path":"sprites/NotFire/NotFire.yy",},"order":2,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"Logo","path":"sprites/Logo/Logo.yy",},"order":1,},
     {"id":{"name":"Smiley","path":"sprites/Smiley/Smiley.yy",},"order":0,},

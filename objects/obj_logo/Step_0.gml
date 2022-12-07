@@ -5,6 +5,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+instance_create_layer(x, y, "Instances", obj_notfire)
+
 if keyboard_check(vk_right) 
 {
 	motion_add(image_angle, 0.2);

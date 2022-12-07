@@ -4,6 +4,7 @@ rspeed = 5;
 Point_dir = 0;
 Is_Rotating = 0;
 
+
 if keyboard_check(vk_right) 
 {
 	var angle = image_angle;
