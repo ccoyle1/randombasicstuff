@@ -13,6 +13,7 @@ if distance_to_object(obj_smiley) < 200 {
 // New Proximity Trigger for Chase (Only one for life of instance)
 if chase=true && runaway=false && distance_to_object(obj_smiley) < 400{
     move_towards_point(obj_smiley.x,obj_smiley.y,5);
+	instance_create_layer(x, y, "Instances", obj_notfire)
 }
 
 // If obj_smiley is more than 400 pixels away, stop Chase
